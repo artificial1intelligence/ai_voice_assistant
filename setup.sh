@@ -32,6 +32,8 @@ echo "Installing package: googletrans ......................"
 yes | sudo pip3 install googletrans
 echo "Installing package: wikipedia ......................"
 yes | sudo pip3 install wikipedia
+echo "Installing package: pyjokes ......................"
+yes | sudo pip3 install pyjokes
 echo "Installing package: spidev ......................"
 yes | sudo pip3 install spidev
 
