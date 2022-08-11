@@ -56,7 +56,37 @@ def process_text(text, pa):
                 va.audio_playback("sorry, i couldn't find any result for " + search_data)
         except KeyError as e:
             va.audio_playback("sorry, i couldn't find any result for " + search_data)
+            
             pass
+        
+        
+      elif "let's play" in result["text"]:
+            a22=["stone",'paper','scissor']
+            print("let's play")
+            va.audio_playback("ok , let's play ,    stone, paper and scissor.  i will chose")
+            rand = random.choice(a22)
+            va.audio_playback(rand)
+            
+
+        if "stone" in text:
+            a1=['paper','scissor','stone']
+            rand = random.choice(a1)
+            va.audio_playback(rand)
+            
+        if "paper" in text:
+            a2 = ['paper', 'scissor', 'stone']
+            rand = random.choice(a2)
+            va.audio_playback(rand)
+            
+        if "scissor" in text:
+            a3 = ['paper', 'scissor', 'stone']
+            rand = random.choice(a3)
+            va.audio_playback(rand)
+            
+        if "joke" in text:
+        va.audio_playback(pyjokes.get_joke())
+                  
+          
 
         
     """
