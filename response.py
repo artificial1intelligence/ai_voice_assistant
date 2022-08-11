@@ -6,6 +6,7 @@ import valib as va
 import action as a
 import time
 import logging
+import pyjokes
 
 logger = logging.getLogger('voice assistant')
 
@@ -58,20 +59,46 @@ def process_text(text, pa):
             va.audio_playback("sorry, i couldn't find any result for " + search_data)
             pass
 
+    if "let's play a game" in text:
+        a1=["stone","paper","scissor"]
+        va.audio_playback("ok let's play, stone, paper, scissor ")
+        va.audio_playback("i will chose")
+        rand = random.choice(a1)
+        va.audio_playback (rand)
         
+        
+    if "stone" in text:
+        a2=["stone","paper","scissor"]
+        rand = random.choice(a2)
+        va.audio_playback (rand)    
+        
+    if "paper" in text:
+        a3=["stone","paper","scissor"]
+        rand = random.choice(a3)
+        va.audio_playback (rand)
+        
+        
+    if "scissor" in text:
+        a4=["stone","paper","scissor"]
+        rand = random.choice(a4)
+        va.audio_playback (rand)    
+       
     """
     asking aboout current time.
     """
     if "time" in text or "Time" in text:
         current_time = a.current_datetime("time")
-        va.audio_playback("right now it is " + current_time)
+        va.audio_playback("right now the time is " + current_time)
+        
+    if "tell me a joke" in text:
+        va.audio_playback(pyjokes.get_joke())
 
     """
     asking about today's date.
     """
     if "date" in text or "Date" in text:
         date = a.current_datetime("date")
-        va.audio_playback("today it is " + date)
+        va.audio_playback("today is " + date)
 
         
     """
