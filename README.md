@@ -20,7 +20,7 @@
 *****************************************************************************************************
 3. Clone the git repository
 *****************************************************************************************************
-    git clone https://github.com/avseng/ai_voice_assistant.git
+    git clone https://github.com/whitehat1hacker/ai_voice_assistant.git
     
 *****************************************************************************************************    
 4. Run setup.sh to install all the pre-requisite packages and RE-SPEAKER sound card.
