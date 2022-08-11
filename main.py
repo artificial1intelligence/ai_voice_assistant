@@ -124,12 +124,12 @@ if __name__ == '__main__':
         file_name = a.process(3)
         logger.info("wake_word said :: " + recognized_text)
         #print("wake_word said :: " + recognized_text)
-        if "Gideon" in recognized_text:
+        if "April" in recognized_text:
             logger.info("wake word detected...")
             recognized_text = ''
             px.wakeup()
             valib.audio_playback('how can i help you')
-            time.sleep(0.5)
+            time.sleep(0.3)
             command_file_name = a.process(5)
             a.voice_command_processor(command_file_name)
             logger.info("you said :: " + recognized_text)
