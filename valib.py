@@ -1,15 +1,23 @@
-from gtts import gTTS
-from pygame import mixer
-import os
+import pyttsx3
+import msvcrt as m
 
-AUDIO_PLAYBACK_FILENAME = "/mnt/ramdisk/audio_play_back.mp3"
+def wait():
+    m.getch()
 
-def audio_playback(text):
-    tts = gTTS(text=text, lang='en-us')
-    tts.save(AUDIO_PLAYBACK_FILENAME)
-    mixer.init()
-    mixer.music.load(AUDIO_PLAYBACK_FILENAME)
-    mixer.music.play()
-    while mixer.music.get_busy():
-        pass
-    os.remove(AUDIO_PLAYBACK_FILENAME)
+
+APRIL = pyttsx3.init('sapi5')
+voice = APRIL.getProperty('voices')
+assistant_voice_id = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_enUS_EvaM'
+rate = APRIL.getProperty('rate')
+APRIL.setProperty('rate', 170)
+voices = APRIL.getProperty('voices')
+APRIL.setProperty('voice', assistant_voice_id)
+
+
+
+def speak(audio):
+    print('APRIL: ' + audio)
+    APRIL.say(audio)
+    APRIL.runAndWait()
+
+
